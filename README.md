@@ -32,7 +32,7 @@ This layered approach progressed from macro-level metrics to granular behavioral
 
 ## Dashboard
 
-**⚠️ IMPORTANT: To use this dashboard, open the file `Train.xlsx` and navigate to the “Dashboard” sheet. All interactive elements function only within this tab.**
+**⚠️ IMPORTANT: To use this dashboard, open the file `Solution.xlsx` and navigate to the “Dashboard” sheet. All interactive elements function only within this tab.**
 
 - This dashboard provides a strategic overview of customer churn at Telecommunications, enabling data-driven decisions to improve retention.
 - Key performance indicators include an overall **churn rate of 14.07%**, average account duration of **100.24 months**, and **1.56 average customer service calls** per customer.
