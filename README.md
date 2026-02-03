@@ -1,91 +1,51 @@
+# TelecomCummunication-Churn
 
-# Telecommunication-ChurnQuest
+---
 
-<!--![Churn](http://raw.githubusercontent.com/PratyushPuri/Telecommunication-ChurnQuest/refs/heads/main/ChurnQuest%20Dash.png)-->
+## Overview
 
+This project investigates customer churn trends at a leading telecommunications company to uncover the key factors driving customers to discontinue their services. By analyzing behavioral patterns, service usage metrics, and customer interaction history, the study delivers actionable insights aimed at designing effective retention initiatives and enhancing overall customer satisfaction.
 
-</div>
+---
 
+## Dataset
 
-## Project Overview
+This analysis leverages the [Kaggle Customer Churn Prediction 2020 dataset](https://www.kaggle.com/competitions/customer-churn-prediction-2020/data), a synthetic yet realistic representation of customer behavior for a U.S.-based telecom provider. Comprising **5,000 customer records** and **20 descriptive features**, the dataset is structured to predict whether a customer will churn (leave the service). Sourced from a Kaggle competition, it offers a cross-sectional view of customer accounts at a single point in time. Key variables include the binary target `churn`, demographic indicators like `state` and `account_length`, service plan choices (`international_plan`, `voice_mail_plan`), and detailed usage metrics across day, evening, night, and international call categories. Additional engagement signals such as voicemail messages and customer service contacts are also included. All monetary values are denominated in USD, and while `area_code` is encoded as text (e.g., "area_code_415"), it can be parsed for geographic insights. Though synthetic, the data mirrors real-world churn patterns, making it ideal for predictive modeling and strategic business analysis.
 
-This project looks at customer churn patterns at a top telecommunications company, to find out what causes customers to leave. By studying customer behavior, usage patterns, and service interactions, this analysis offers valuable insights to create targeted retention strategies and improve customer satisfaction.
+---
 
-## Dataset Information
+## Analysis Outcome
 
-This analysis uses the [Kaggle Customer Churn Prediction 2020 dataset](https://www.kaggle.com/competitions/customer-churn-prediction-2020/data). It simulates customer behavior for a telecommunications company based in the U.S. The dataset has **5,000 customer records** with **20 features**. It is designed to predict whether a customer will leave the service (churn).
+To uncover the drivers of customer attrition, we conducted a comprehensive and structured analysis:
 
-- **Source**: Kaggle competition dataset tailored for modeling customer churn in the telecom industry.
-- **Time Coverage**: Cross-sectional (snapshot of customer accounts at one point in time).
-- **Key Variables**:
-  - **Target**: `churn` (binary: "yes"/"no") indicates if the customer left the provider.
-  - **Customer Profile**: `state` (2-letter U.S. state code), `account_length` (months with provider), `area_code`.
-  - **Service Plans**: `international_plan` (yes/no), `voice_mail_plan` (yes/no).
-  - **Call Usage**:
-    - **Day**: `total_day_minutes`, `total_day_calls`, `total_day_charge`
-    - **Evening**: `total_eve_minutes`, `total_eve_calls`, `total_eve_charge`
-    - **Night**: `total_night_minutes`, `total_night_calls`, `total_night_charge`
-    - **International**: `total_intl_minutes`, `total_intl_calls`, `total_intl_charge`
-  - **Engagement Metrics**: `number_vmail_messages`, `number_customer_service_calls`.
-- **Notes**:
-  - All monetary values are in USD.
-  - `area_code` is given as a string (e.g., "area_code_415") but can be converted to real area codes if necessary.
-  - The dataset is synthetic but modeled after real telecom churn patterns, making it suitable for classification and business insight analysis.
+- Calculated the **overall churn rate and total number of churned customers** to quantify the business impact.
+- Benchmarked churned versus retained customers on critical dimensions such as **account tenure, frequency of customer service calls, and call-related charges** across day, evening, night, and international segments.
+- Assessed how enrollment in specific **service plans—like International or Voicemail Plans—influences churn probability**.
+- Examined correlations between **usage behaviors** (e.g., total call minutes, call frequency) and the likelihood of leaving.
+- Performed **geographic segmentation by Area Code** to pinpoint regions with elevated churn rates.
+- Explored interaction effects—for instance, whether **high international call charges disproportionately increase churn among subscribers of the International Plan**.
+- Evaluated behavioral thresholds, such as whether **making more than three customer service calls significantly escalates churn risk**.
+- Applied **cluster analysis** to group customers by usage profiles and compare their respective churn tendencies.
+- Analyzed churn trends across **quartiles of account length** to determine if newer or long-term customers are more vulnerable.
 
-## Analysis
+This layered approach progressed from macro-level metrics to granular behavioral segments, revealing not only *that* customers churn, but precisely *who* is at risk, *when*, and under *which service conditions*—enabling precise, data-driven retention initiatives.
 
-> Solution File is `ChurnQuest.xlsx`
+## Dashboard
 
-To understand what causes customers to leave, we carried out a structured analysis:
+**⚠️ IMPORTANT: To use this dashboard, open the file `Train.xlsx` and navigate to the “Dashboard” sheet. All interactive elements function only within this tab.**
 
-**Analysis and Insights:**
-*   Measured the **overall churn rate and volume** to establish the scale of the problem.
-*   Compared churned customers to retained customers across key metrics like **account duration, service calls, and call charges (day/evening/night/international)**.
-*   Studied how **service plan subscriptions** (e.g., International Plan, Voicemail Plan) affect the likelihood of churn.
-*   Looked into connections between **usage patterns** (total minutes, number of calls) and customer departure.
-*   Carried out **segmented analysis by Area Code** to find geographic areas with high churn.
-*   Explored interaction effects, such as how **international call charges** specifically impact churn for international plan subscribers.
-*   Investigated thresholds, like whether **customer service calls exceeding 3** significantly raise churn risk.
-*   Conducted **cluster analysis** to identify different customer groups based on their usage patterns and related churn rates.
-*   Analyzed the relationship between **account length quartiles** and churn to see if newer customers are more at risk.
+- This dashboard provides a strategic overview of customer churn at Telecommunications, enabling data-driven decisions to improve retention.
+- Key performance indicators include an overall **churn rate of 14.07%**, average account duration of **100.24 months**, and **1.56 average customer service calls** per customer.
+- Visuals highlight the **top 10 states by churn volume**, with West Virginia (WV) leading at 139 churned customers, helping identify geographic hotspots.
+- The **overall churn status** is displayed via a donut chart, showing 86% retained vs. 14% churned customers.
+- An interactive chart reveals how **international plan adoption correlates with churn**, indicating that subscribers without the plan are more likely to leave.
+- The **churn-by-customer-service-calls** analysis shows a sharp increase in churn risk for customers making 3+ service calls, highlighting service experience as a key driver.
+- Designed for leadership and customer success teams to prioritize interventions, allocate resources, and tailor retention campaigns based on actionable insights.
 
-This thorough approach moved from broad metrics to detailed segments. It uncovered not just *if* customers leave, but also *which* customers leave, *when*, and under *what* service conditions. The findings directly inform targeted retention strategies.
-
-## **Dashboard Overview: Telecom Customer Churn**
-
-This interactive dashboard gives a clear view of customer loss, highlighting important metrics and trends.
-
-**Key Performance Indicators (KPIs):**
-*   **Churn Rate:** The main metric shows that **14.07%** of customers have left.
-*   **Average Account Tenure:** The average customer stays for **100.24 months** (about 8.35 years).
-*   **Average Service Calls:** Customers make an average of **1.56 calls** to customer service.
-*   **International Plan Adoption:** Shows the percentage of customers with international calling plans.
-
-**Main Visualizations:**
-*   **Top 10 States by Churn:** A geographic breakdown showing regions with the highest loss rates for targeted action.
-*   **Overall Churn Status:** A pie or donut chart that clearly visualizes the split between churned and active customers.
-*   **International Adoption Analysis:** Looks at how international plan subscriptions relate to churn behavior.
-*   **Churn by Service Calls:** A chart that shows how the chance of churn increases with more customer service calls.
-
-**Interactivity:**
-*   Use the **Churn (Yes/No) slicer** to filter the whole dashboard. You can view data only for churned customers to analyze their profile or for retained customers to understand what keeps them.
+---
 
 ![Churn](Capture.PNG)
 
-## **How to Use the Dashboard**
-
-This interactive dashboard offers a simple way to analyze customer attrition. Follow these steps to explore the data:
-
-1.  **Open the File:** Launch the `ChurnQuest.xlsx` file in Microsoft Excel.
-
-2.  **Navigate & Interact:**
-    *   **Review KPIs:** Start by looking at the Key Performance Indicators (KPIs) at the top. Check the overall **Churn Rate (14.07%)** and the **Average Account Duration**.
-    *   **Use the Slicer:** Use the main **Churn (Yes/No)** slicer to filter the entire dashboard. Select "Yes" to analyze the profile of customers who left or "No" to focus on active customers and retention factors.
-    *   **Analyze Charts:** Click on or hover over charts, like **Top 10 States by Churn** or **Churn by Customer Service Calls**, to see exact values and observe patterns.
-
-3.  **Refresh Data (If Applicable):**
-    *   If the dashboard is linked to an updated dataset, refresh it by going to the **Data** tab in Excel and selecting **"Refresh All."**
-    *   **Security Note:** If asked to enable macros or external content, choose "Enable" only if you trust the file's source and security.
 
 ## Author & Contact
 - Name: `Kshitij Saini`
